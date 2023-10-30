@@ -16,7 +16,6 @@ Generates documentation for the module, including a description, usage examples,
 brew install  p0bailey/homebrew-tools/tofuinit
 ```
 
-
 ```
 Usage: tofuinit <module_name>
 
