@@ -12,9 +12,6 @@ Creates a basic module structure, including files for the module's inputs, outpu
 Generates documentation for the module, including a description, usage examples, and input and output descriptions.
 
 
-Validates the module's configuration and ensures that it is consistent with the IAC tool's best practices.
-
-
 ```
 brew install  p0bailey/homebrew-tools/tofuinit
 ```
