@@ -82,26 +82,16 @@ func CreateDirectoryAndFiles(dirName string) {
 		CheckError(fmt.Sprintf("Failed to create file %s in tests directory", file), err)
 	}
 
-	err = CreateMainReadmeFromTemplate(dirName)
-	if err != nil {
-		fmt.Println("Error:", err)
-	}
-
-	err = CreateDocsReadmeFromTemplate(dirName)
-	if err != nil {
-		fmt.Println("Error:", err)
-	}
-
-	err = CreateExamplesReadmeFromTemplate(dirName)
-	if err != nil {
-		fmt.Println("Error:", err)
-	}
+	// Create README files
+	CheckError("Error:", CreateReadmeFromTemplate(dirName, "", "main_readme.md"))
+	CheckError("Error:", CreateReadmeFromTemplate(dirName, "docs", "docs_readme.md"))
+	CheckError("Error:", CreateReadmeFromTemplate(dirName, "examples", "examples_readme.md"))
 
 }
 
-func CreateExamplesReadmeFromTemplate(dirName string) error {
-	// Read content from embedded (assuming template.txt is a file inside templates directory)
-	contentBytes, err := tmplContent.ReadFile("templates/examples_readme.md")
+func CreateReadmeFromTemplate(dirName, subFolderName, templateName string) error {
+	// Read content from embedded
+	contentBytes, err := tmplContent.ReadFile("templates/" + templateName)
 	if err != nil {
 		return fmt.Errorf("Failed to read embedded template: %v", err)
 	}
@@ -119,81 +109,7 @@ func CreateExamplesReadmeFromTemplate(dirName string) error {
 	}
 
 	// Render the template
-	subFolderName := "examples"
-	subFolderPath := filepath.Join(dirName, subFolderName)
-	path := filepath.Join(subFolderPath, "README.md")
-	file, err := os.Create(path)
-	if err != nil {
-		return fmt.Errorf("Failed to create README.md: %v", err)
-	}
-	defer file.Close()
-
-	err = tmpl.Execute(file, data)
-	if err != nil {
-		return fmt.Errorf("Failed to render template: %v", err)
-	}
-
-	return nil
-}
-
-func CreateDocsReadmeFromTemplate(dirName string) error {
-	// Read content from embedded (assuming template.txt is a file inside templates directory)
-	contentBytes, err := tmplContent.ReadFile("templates/docs_readme.md")
-	if err != nil {
-		return fmt.Errorf("Failed to read embedded template: %v", err)
-	}
-	content := string(contentBytes)
-
-	// Create a new template and parse the content
-	tmpl, err := template.New("readme").Parse(content)
-	if err != nil {
-		return fmt.Errorf("Failed to parse template: %v", err)
-	}
-
-	// Prepare the data
-	data := TemplateData{
-		DirName: dirName,
-	}
-
-	// Render the template
-	subFolderName := "docs"
-	subFolderPath := filepath.Join(dirName, subFolderName)
-	path := filepath.Join(subFolderPath, "README.md")
-	file, err := os.Create(path)
-	if err != nil {
-		return fmt.Errorf("Failed to create README.md: %v", err)
-	}
-	defer file.Close()
-
-	err = tmpl.Execute(file, data)
-	if err != nil {
-		return fmt.Errorf("Failed to render template: %v", err)
-	}
-
-	return nil
-}
-
-func CreateMainReadmeFromTemplate(dirName string) error {
-	// Read content from embedded (assuming template.txt is a file inside templates directory)
-	contentBytes, err := tmplContent.ReadFile("templates/main_readme.md")
-	if err != nil {
-		return fmt.Errorf("Failed to read embedded template: %v", err)
-	}
-	content := string(contentBytes)
-
-	// Create a new template and parse the content
-	tmpl, err := template.New("readme").Parse(content)
-	if err != nil {
-		return fmt.Errorf("Failed to parse template: %v", err)
-	}
-
-	// Prepare the data
-	data := TemplateData{
-		DirName: dirName,
-	}
-
-	// Render the template
-	path := filepath.Join(dirName, "README.md")
+	path := filepath.Join(dirName, subFolderName, "README.md")
 	file, err := os.Create(path)
 	if err != nil {
 		return fmt.Errorf("Failed to create README.md: %v", err)
