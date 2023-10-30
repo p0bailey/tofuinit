@@ -1,4 +1,4 @@
-#tofuinit
+# tofuinit
 
 Go Utility for Generating Fully Compliant IaC Modules Scaffolding Code
 
@@ -12,7 +12,7 @@ To use tofuinit, simply run the following command:
 tofuinit <module_name>
 ```
 
-Features
+# Features
 
 Creates a basic module structure, including files for the module's inputs, outputs, resources, and providers.
     
@@ -23,9 +23,7 @@ brew install  p0bailey/homebrew-tools/tofuinit
 brew install tofuinit
 ```
 
-
 # Usage
-
 
 ```
 Usage: tofuinit <module_name>
@@ -55,7 +53,7 @@ mymodule
 ```    
     
     
-#Contributions 
+# Contributions 
     
 I accept contributions and pull requests! I am always looking for ways to improve, and I am grateful for the help of the community.
 
