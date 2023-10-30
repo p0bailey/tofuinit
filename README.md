@@ -15,7 +15,6 @@ Generates documentation for the module, including a description, usage examples,
 Validates the module's configuration and ensures that it is consistent with the IAC tool's best practices.
 
 
-
 ```
 brew install  p0bailey/homebrew-tools/tofuinit
 ```
