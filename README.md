@@ -14,9 +14,7 @@ tofuinit <module_name>
 
 Features
 
-
 Creates a basic module structure, including files for the module's inputs, outputs, resources, and providers.
-    
     
 # Installation
 
