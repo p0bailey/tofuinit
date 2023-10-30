@@ -6,7 +6,6 @@ I created this utility because I was frustrated with having to manually set up t
 
 This Golang CLI tool automatically generates the scaffolding for fully compliant IaC modules. It can be used to generate a new IAC module from scratch or to add new components to an existing module.
 
-
 To use tofuinit, simply run the following command:
 
 ```
