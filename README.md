@@ -1,20 +1,15 @@
-# tofuinit
+#tofuinit
 
 Go Utility for Generating Fully Compliant IaC Modules Scaffolding Code
 
-I created this utility because I was frustrated with having to manually set up the module structure each time I needed to write a new Infrastructure as Code (IaC) module.
-
 This Golang CLI tool automatically generates the scaffolding for fully compliant IaC modules. It can be used to generate a new IAC module from scratch or to add new components to an existing module.
 
-To use tofuinit, simply run the following command:
+I created this utility because I was frustrated with having to manually set up the module structure each time I needed to write a new Infrastructure as Code (IaC) module.
 
-```
-tofuinit <module_name>
-```
-
-# Features
+Features
 
 Creates a basic module structure, including files for the module's inputs, outputs, resources, and providers.
+
     
 # Installation
 
@@ -25,17 +20,13 @@ brew install tofuinit
 
 # Usage
 
+To use tofuinit, simply run the following command:
+
 ```
-Usage: tofuinit <module_name>
-
-tofuinit is a tool for initializing a new IaC module with the specified name.
-
-Options:
-  --help     Display this help menu and exit
-
-Arguments:
-  module_name    The name of the module to be created
+tofuinit <module_name>
 ```
+
+IaC module structure:
 
 ```
 mymodule
@@ -51,9 +42,24 @@ mymodule
 └── tests
     └── main.tftest.hcl
 ```    
+
+Tofuinit menu
+
+```
+Usage: tofuinit <module_name>
+
+tofuinit is a tool for initializing a new IaC module with the specified name.
+
+Options:
+  --help     Display this help menu and exit
+
+Arguments:
+  module_name    The name of the module to be created
+```
+
     
     
-# Contributions 
+#Contributions 
     
 I accept contributions and pull requests! I am always looking for ways to improve, and I am grateful for the help of the community.
 
