@@ -45,8 +45,7 @@ build:
 
 # Test the application
 test: format
-	rm -rf tests/testIntegrationDir
-	GO111MODULE=on $(GOTEST) -v ./tests 
+	GO111MODULE=on $(GOTEST) -v ./cmd 
 
 # Clean up the binaries
 clean:
