@@ -2,14 +2,13 @@
 
 Go Utility for Generating Fully Compliant IaC Modules Scaffolding Code
 
-I created this utility because I was frustrated with having to manually set up the module structure each time I needed to write a new Infrastructure as Code (IaC) module.
-
 This Golang CLI tool automatically generates the scaffolding for fully compliant IaC modules. It can be used to generate a new IAC module from scratch or to add new components to an existing module.
+
+I created this utility because I was frustrated with having to manually set up the module structure each time I needed to write a new Infrastructure as Code (IaC) module.
 
 Features
 
 Creates a basic module structure, including files for the module's inputs, outputs, resources, and providers.
-
 
     
 # Installation
@@ -18,11 +17,6 @@ Creates a basic module structure, including files for the module's inputs, outpu
 brew install  p0bailey/homebrew-tools/tofuinit
 brew install tofuinit
 ```
-
-
-
-
-    
 
 # Usage
 
