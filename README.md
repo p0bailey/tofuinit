@@ -1,4 +1,4 @@
-#tofuinit
+# tofuinit
 
 Go Utility for Generating Fully Compliant IaC Modules Scaffolding Code
 
@@ -59,7 +59,7 @@ Arguments:
 
     
     
-#Contributions 
+# Contributions 
     
 I accept contributions and pull requests! I am always looking for ways to improve, and I am grateful for the help of the community.
 
